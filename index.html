@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Ganadores de Rifas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏆 Gana con el Mudo</h1>
+            <p>Registro y consulta de ganadores</p>
+        </div>
+
+        <div class="content">
+            <div id="alert" class="alert"></div>
+
+            <!-- Formulario de registro -->
+            <div class="form-section">
+                <h2 class="section-title" id="formTitle">📝 Registrar Nuevo Ganador</h2>
+                <form id="ganadorForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tickets_comprados">Tickets Comprados *</label>
+                            <input type="number" id="tickets_comprados" name="tickets_comprados" required min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="ticket_ganador">Ticket Ganador *</label>
+                            <input type="text" id="ticket_ganador" name="ticket_ganador" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="premio">Premio *</label>
+                            <input type="text" id="premio" name="premio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección *</label>
+                            <textarea id="direccion" name="direccion" rows="2" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="placa_premio">Placa del Premio</label>
+                            <input type="text" id="placa_premio" name="placa_premio">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitButton">✅ Registrar Ganador</button>
+                        <button type="button" class="btn btn-cancel" id="cancelButton" style="display: none;">❌ Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Búsqueda -->
+            <div class="search-section">
+                <h2 class="section-title">🔍 Buscar Ganadores</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar por nombre, ticket, premio, dirección, teléfono o placa...">
+                    <button type="button" class="btn btn-search" onclick="buscarGanadores()">Buscar</button>
+                </div>
+            </div>
+
+            <!-- Resultados -->
+            <div class="results-section">
+                <h2 class="section-title">📊 Lista de Ganadores</h2>
+                <div class="table-container">
+                    <table id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Tickets Comprados</th>
+                                <th>Ticket Ganador</th>
+                                <th>Premio</th>
+                                <th>Dirección</th>
+                                <th>Teléfono</th>
+                                <th>Placa Premio</th>
+                                <th>Fecha Registro</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody">
+                            <!-- Los resultados se cargarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
